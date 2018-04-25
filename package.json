@@ -58,6 +58,10 @@
     "react": "^0.14.8",
     "react-native": "^0.25.1"
   },
+  "dependencies": {
+    "prop-types": "^15.6.1",
+    "create-react-class": "^15.6.3"
+  },
   "jest": {
     "scriptPreprocessor": "node_modules/react-native/jestSupport/preprocessor.js",
     "setupEnvScriptFile": "node_modules/react-native/jestSupport/env.js",

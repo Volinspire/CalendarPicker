@@ -14,6 +14,8 @@ import {
   Text,
   TouchableOpacity
 } from 'react-native';
+import createReactClass from 'create-react-class';
+import PropTypes from 'prop-types';
 
 var {
   WEEKDAYS,
@@ -30,22 +32,22 @@ const IPHONE6_WIDTH = 375;
 var initialScale = Dimensions.get('window').width / IPHONE6_WIDTH ;
 var styles = StyleSheet.create(makeStyles(initialScale));
 
-var Day = React.createClass({
+var Day = createReactClass({
   propTypes: {
-    date: React.PropTypes.instanceOf(Date),
-    onDayChange: React.PropTypes.func,
-    maxDate: React.PropTypes.instanceOf(Date),
-    minDate: React.PropTypes.instanceOf(Date),
-    selected: React.PropTypes.bool,
-    type: React.PropTypes.string,
-    day: React.PropTypes.oneOfType([
-      React.PropTypes.number,
-      React.PropTypes.string
+    date: PropTypes.instanceOf(Date),
+    onDayChange: PropTypes.func,
+    maxDate: PropTypes.instanceOf(Date),
+    minDate: PropTypes.instanceOf(Date),
+    selected: PropTypes.bool,
+    type: PropTypes.string,
+    day: PropTypes.oneOfType([
+      PropTypes.number,
+      PropTypes.string
     ]).isRequired,
-    screenWidth: React.PropTypes.number,
-    startFromMonday: React.PropTypes.bool,
-    selectedDayColor: React.PropTypes.string,
-    selectedDayTextColor: React.PropTypes.string,
+    screenWidth: PropTypes.number,
+    startFromMonday: PropTypes.bool,
+    selectedDayColor: PropTypes.string,
+    selectedDayTextColor: PropTypes.string,
     textStyle: Text.propTypes.style
   },
   getDefaultProps () {
@@ -114,18 +116,18 @@ var Day = React.createClass({
   }
 });
 
-var Days = React.createClass({
+var Days = createReactClass({
   propTypes: {
-    maxDate: React.PropTypes.instanceOf(Date),
-    minDate: React.PropTypes.instanceOf(Date),
-    fromDate: React.PropTypes.instanceOf(Date),
-    toDate: React.PropTypes.instanceOf(Date),
-    date: React.PropTypes.instanceOf(Date).isRequired,
-    month: React.PropTypes.number.isRequired,
-    year: React.PropTypes.number.isRequired,
-    onDayChange: React.PropTypes.func.isRequired,
-    selectedDayColor: React.PropTypes.string,
-    selectedDayTextColor: React.PropTypes.string,
+    maxDate: PropTypes.instanceOf(Date),
+    minDate: PropTypes.instanceOf(Date),
+    fromDate: PropTypes.instanceOf(Date),
+    toDate: PropTypes.instanceOf(Date),
+    date: PropTypes.instanceOf(Date).isRequired,
+    month: PropTypes.number.isRequired,
+    year: PropTypes.number.isRequired,
+    onDayChange: PropTypes.func.isRequired,
+    selectedDayColor: PropTypes.string,
+    selectedDayTextColor: PropTypes.string,
     textStyle: Text.propTypes.style
   },
   getInitialState() {
@@ -247,9 +249,9 @@ var Days = React.createClass({
 
 });
 
-var WeekDaysLabels = React.createClass({
+var WeekDaysLabels = createReactClass({
   propTypes: {
-    screenWidth: React.PropTypes.number,
+    screenWidth: PropTypes.number,
     textStyle: Text.propTypes.style
   },
   getInitialState() {
@@ -265,13 +267,13 @@ var WeekDaysLabels = React.createClass({
   }
 });
 
-var HeaderControls = React.createClass({
+var HeaderControls = createReactClass({
   propTypes: {
-    month: React.PropTypes.number.isRequired,
-    year: React.PropTypes.number,
-    getNextYear: React.PropTypes.func.isRequired,
-    getPrevYear: React.PropTypes.func.isRequired,
-    onMonthChange: React.PropTypes.func.isRequired,
+    month: PropTypes.number.isRequired,
+    year: PropTypes.number,
+    getNextYear: PropTypes.func.isRequired,
+    getPrevYear: PropTypes.func.isRequired,
+    onMonthChange: PropTypes.func.isRequired,
     textStyle: Text.propTypes.style
   },
   getInitialState() {
@@ -397,25 +399,24 @@ var HeaderControls = React.createClass({
   }
 });
 
-var CalendarPicker = React.createClass({
+var CalendarPicker = createReactClass({
   propTypes: {
-    maxDate: React.PropTypes.instanceOf(Date),
-    minDate: React.PropTypes.instanceOf(Date),
-    fromDate: React.PropTypes.instanceOf(Date),
-    toDate: React.PropTypes.instanceOf(Date),
-    selectedDate: React.PropTypes.instanceOf(Date).isRequired,
-    onDateChange: React.PropTypes.func,
-    screenWidth: React.PropTypes.number,
-    startFromMonday: React.PropTypes.bool,
-    weekdays: React.PropTypes.array,
-    months: React.PropTypes.array,
-    previousTitle: React.PropTypes.string,
-    nextTitle: React.PropTypes.string,
-    selectedDayColor: React.PropTypes.string,
-    selectedDayTextColor: React.PropTypes.string,
-    scaleFactor: React.PropTypes.number,
-    textStyle: Text.propTypes.style,
-    allowRangeSelection: React.PropTypes.bool
+    maxDate: PropTypes.instanceOf(Date),
+    minDate: PropTypes.instanceOf(Date),
+    fromDate: PropTypes.instanceOf(Date),
+    toDate: PropTypes.instanceOf(Date),
+    selectedDate: PropTypes.instanceOf(Date).isRequired,
+    onDateChange: PropTypes.func,
+    screenWidth: PropTypes.number,
+    startFromMonday: PropTypes.bool,
+    weekdays: PropTypes.array,
+    months: PropTypes.array,
+    previousTitle: PropTypes.string,
+    nextTitle: PropTypes.string,
+    selectedDayColor: PropTypes.string,
+    selectedDayTextColor: PropTypes.string,
+    scaleFactor: PropTypes.number,
+    allowRangeSelection: PropTypes.bool
   },
   getDefaultProps() {
     return {
